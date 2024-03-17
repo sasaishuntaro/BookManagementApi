@@ -18,9 +18,7 @@ class AuthorService(
         return authorRepository.search(name = name)
     }
 
-    /**
-     * 著者に紐づく書籍検索
-     */
+    /** 著者に紐づく書籍検索 */
     fun getBooks(authorId: Long): List<Book>? {
         val targetId = authorRepository
             .findById(id = authorId)

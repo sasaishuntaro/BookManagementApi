@@ -16,7 +16,7 @@ import org.springframework.web.server.ResponseStatusException
 @Validated
 @RequestMapping("/authors")
 class AuthorController(
-    private val authorService: AuthorService,
+    private val authorService: AuthorService
 ) {
     /** 著者検索 */
     @GetMapping
@@ -30,7 +30,7 @@ class AuthorController(
     /** 著者に紐づく書籍一覧 */
     @GetMapping("/{id}/books")
     fun searchBooks(
-        @PathVariable("id") id: Long,
+        @PathVariable("id") id: Long
     ): ResponseEntity<List<Book>> {
         val result = authorService.getBooks(authorId = id)
         return if (result === null) {
