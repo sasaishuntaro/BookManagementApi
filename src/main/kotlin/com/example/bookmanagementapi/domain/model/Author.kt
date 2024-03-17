@@ -1,3 +1,10 @@
 package com.example.bookmanagementapi.domain.model
 
-data class Author()
+/** 著者 */
+data class Author(
+    /** ID */
+    val id: Long,
+    /** 名前 */
+    val name: String
+)
+
